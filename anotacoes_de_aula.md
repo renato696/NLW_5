@@ -36,16 +36,20 @@
   `yarn add ts-node-dev -D`
   
 - Criar no package.json um script para o ts.node rodar a aplicação<br>
-  ```"scripts": {
-     "dev":"ts-node-dev src/server.ts",```
+  ```
+  "scripts": {
+        "dev":"ts-node-dev src/server.ts",
+  ```
 
 - Rodar o servidor<br>
   `yarn dev`
   <p>OBS: o interessante de fazer desta forma é que qualquer alteração no arquivo server.ts, assim que salva, ele já reinicia o servidor.</p> 
   
 - Criar rotas GET e POST no servidor<br>
-  ```app.post("/", (request, response) => {
-        return response.json({ message: "usuário salvo com sucesso!"})```
+  ```
+  app.post("/", (request, response) => {
+        return response.json({ message: "usuário salvo com sucesso!"})
+  ``` 
     
 - Instalar o Insomnia
 
