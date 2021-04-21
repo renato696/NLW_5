@@ -2,8 +2,7 @@
 
 ## Aula 01
 
-- Criar package.json, que é o arquivo de gerenciamento do projeto
-  <p>
+- Criar package.json, que é o arquivo de gerenciamento do projeto<br>
   `npm init -y`
  
  - Instalar o express
