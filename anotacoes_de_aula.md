@@ -3,48 +3,49 @@
 ## Aula 01
 
 - Criar package.json, que é o arquivo de gerenciamento do projeto
-    <p>npm init -y</p>
+  <p>npm init -y</p>
  
  - Instalar o express
-    npm install express
+   <p>npm install express</p>
 
 - Criar a pasta /src
 
 - Criar o arquivo /src/server.ts e dentro deste arquivo, importar o express
-    import express, { response } from "express";
+  <p>import express, { response } from "express";<p>
     
-- Criar as rotas do servidor app.get / post
+- Criar as rotas do servidor 
+  <p>app.get / post</p>
 
 - Iniciar o servidor app.listen(porta, função console.log)
-  é interessante colocar um console.log("server is runnin...") para visualizar no terminal que está rodando. 
+  <p>é interessante colocar um console.log("server is runnin...") para visualizar no terminal que está rodando.</p> 
   
 - Adicionar as tipagens do Typescript
-    npm add @types/express -D
+  <p>npm add @types/express -D</p>
 
-A partir deste ponto, eu deixei de usar o NPM e passei a usar o Yarn para acompanhar melhor a instrutora, que usava o Yarn.
-  sudo npm install --global yarn (instala o Yarn)
+- A partir deste ponto, eu deixei de usar o NPM e passei a usar o Yarn para acompanhar melhor a instrutora, que usava o Yarn.
+  <p>sudo npm install --global yarn (instala o Yarn)</p>
 
 - Instalar o Typescript como dependência para utilizar forma nova de import / export
-  npm add typescript -D
+  <p>npm add typescript -D</p>
 
 - Criar o arquivo de configuração do Typescript
-  npm tsc --init
-  e alterar o "strict": false (que retira a verificação que o strict fazia)
+  <p>npm tsc --init</p>
+  <p>e alterar o "strict": false (que retira a verificação que o strict fazia)</p>
 
 - Instalar o node-dev como mais uma dependencia de desenvolvimento para ajudar o NodeJS a entender o import / export
-  yarn add ts-node-dev -D
+  <p>yarn add ts-node-dev -D</p>
   
 - Criar no package.json um script para o ts.node rodar a aplicação
-  "scripts": {
-    "dev":"ts-node-dev src/server.ts",
+  <p>"scripts": {</p>
+  <p>"dev":"ts-node-dev src/server.ts",</p>
 
 - Rodar o servidor
-   yarn dev 
-  OBS: o interessante de fazer desta forma é que qualquer alteração no arquivo server.ts, assim que salva, ele já reinicia o servidor. 
+  <p>yarn dev</p> 
+  <p>OBS: o interessante de fazer desta forma é que qualquer alteração no arquivo server.ts, assim que salva, ele já reinicia o servidor.</p> 
   
 - Criar rotas GET e POST no servidor
-  app.post("/", (request, response) => {
-    return response.json({ message: "usuário salvo com sucesso!"})
+  <p>app.post("/", (request, response) => {</p>
+  <p>return response.json({ message: "usuário salvo com sucesso!"})</p>
     
 - Instalar o Insomnia
 
