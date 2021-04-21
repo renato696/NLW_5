@@ -3,7 +3,8 @@
 ## Aula 01
 
 - Criar package.json, que é o arquivo de gerenciamento do projeto
-  <p>npm init -y</p>
+  <p>
+  `npm init -y`
  
  - Instalar o express
    <p>npm install express</p>
@@ -11,7 +12,7 @@
 - Criar a pasta /src
 
 - Criar o arquivo /src/server.ts e dentro deste arquivo, importar o express
-  <p>import express, { response } from "express";<p>
+  `import express, { response } from "express";`
     
 - Criar as rotas do servidor 
   <p>app.get / post</p>
