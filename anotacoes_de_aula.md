@@ -60,7 +60,7 @@
 
 - typeORM - typeorm.io - verificar com calma esta ferramenta, muito utilizada na aplicação<br>
 
-- instalar o typeorm e suas dependencias para o SQLite
+- instalar o typeorm e suas dependencias para o SQLite<br>
 `yarn add typeorm reflect-metadata sqlite3`
 
 - criar o arquivo ormconfig.json na raiz do projeto.<br>
@@ -70,39 +70,39 @@ OBS: instalamos o driver SQLite3, mas no projeto, vamos usar o nome SQLite.<br>
 
 - criar dentro do /database o arquivo index.ts, e importar o createConection.
 
-- importar o /database no server.ts
+- importar o /database no server.ts<br>
 `import "./database"; `
 
 - MIGRATIONS: histórico de tudo o que é feito no DB
 
-- criar o database no ormconfig.json
+- criar o database no ormconfig.json<br>
 `"database": "./src/database/database.sqlite"`
 
-- inserir as migrations, note que elas vão dentro de um array:
+- inserir as migrations, note que elas vão dentro de um array:<br>
 `"migrations": ["./src/database/migrations/**.ts"]`
 
-- adicionar ao package.json o script:
+- adicionar ao package.json o script:<br>
 `"typeorm": "ts-node-dev node_modules/typeorm/cli.js"`
 
 - e então, no ormconfig, inserir a cli e informar onde estão as migrations<br>
 
-- para criar as tabelas (migrations):
+- para criar as tabelas (migrations):<br>
 `yarn typeorm migrations create -n CreateSettings`
 
 - criar a tabela e configurações UP e DOWN<br>
 
-- rodar a tabela:
-`yarn type orm migration run`
+- rodar a tabela:<br>
+`yarn type orm migration run`<br>
 OBS: verificar com o BeeKeeper Studio<br>
 
 - criar a pasta ./src/entities e o arquivo settings.ts
 
 - aterar no tsconfig as decorations
 
-- adicionar a biblioteca UUID para que o projeto tenha a responsabilidade de criar as UUIDs
+- adicionar a biblioteca UUID para que o projeto tenha a responsabilidade de criar as UUIDs<br>
 `yarn add uuid`
 
-- instalar as tipagens também
+- instalar as tipagens também<br>
 `yarn add@types/uuid -D`
 
 - fazer mais uma configuração no typeorm
