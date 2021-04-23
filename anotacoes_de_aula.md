@@ -55,11 +55,9 @@
 
 - Criar e testar rota post no Insomnia<br>
 ![insomnia criando rota POST](https://user-images.githubusercontent.com/68570832/115545895-bcab8800-a27a-11eb-9107-c7f29bc345fa.png)
-<br>
-<br>
-<br>
+
 ## Aula 02 - Iniciando o Banco de Dados<br>
-<br>
+
 - typeORM - typeorm.io - verificar com calma esta ferramenta, muito utilizada na aplicação<br>
 
 - instalar o typeorm e suas dependencias para o SQLite
