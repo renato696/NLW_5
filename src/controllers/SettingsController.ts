@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
-import { SettingsRepository} from "../repositories/SettingsRepository"
+import { SettingsRepository} from "../repositories/SettingsRepository";
 
 class SettingsController {
 
@@ -18,6 +18,6 @@ class SettingsController {
 
     return response.json(settings);
     }
-}
+};
 
 export { SettingsController }
