@@ -55,4 +55,62 @@
 
 - Criar e testar rota post no Insomnia<br>
 ![insomnia criando rota POST](https://user-images.githubusercontent.com/68570832/115545895-bcab8800-a27a-11eb-9107-c7f29bc345fa.png)
+<br>
+<br>
+<br>
+## Aula 02 - Iniciando o Banco de Dados<br>
+<br>
+- typeORM - typeorm.io - verificar com calma esta ferramenta, muito utilizada na aplicação<br>
 
+- instalar o typeorm e suas dependencias para o SQLite
+`yarn add typeorm reflect-metadata sqlite3`
+
+- criar o arquivo ormconfig.json na raiz do projeto.<br>
+OBS: instalamos o driver SQLite3, mas no projeto, vamos usar o nome SQLite.<br>
+
+- criar a pasta database dentro do /src, para colocar as configuraçõesde criação de conexão.
+
+- criar dentro do /database o arquivo index.ts, e importar o createConection.
+
+- importar o /database no server.ts
+`import "./database"; `
+
+- MIGRATIONS: histórico de tudo o que é feito no DB
+
+- criar o database no ormconfig.json
+`"database": "./src/database/database.sqlite"`
+
+- inserir as migrations, note que elas vão dentro de um array:
+`"migrations": ["./src/database/migrations/**.ts"]`
+
+- adicionar ao package.json o script:
+`"typeorm": "ts-node-dev node_modules/typeorm/cli.js"`
+
+- e então, no ormconfig, inserir a cli e informar onde estão as migrations<br>
+
+- para criar as tabelas (migrations):
+`yarn typeorm migrations create -n CreateSettings`
+
+- criar a tabela e configurações UP e DOWN<br>
+
+- rodar a tabela:
+`yarn type orm migration run`
+OBS: verificar com o BeeKeeper Studio<br>
+
+- criar a pasta ./src/entities e o arquivo settings.ts
+
+- aterar no tsconfig as decorations
+
+- adicionar a biblioteca UUID para que o projeto tenha a responsabilidade de criar as UUIDs
+`yarn add uuid`
+
+- instalar as tipagens também
+`yarn add@types/uuid -D`
+
+- fazer mais uma configuração no typeorm
+
+- criar a pasta repositories e settingsRepository.ts
+
+- criar as rotas: arquivos de rotas routes.ts e importar no server.ts
+
+- fazer a criação do controller
