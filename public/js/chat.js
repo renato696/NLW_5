@@ -1,9 +1,9 @@
 document.querySelector("#start_chat").addEventListener("click", (event) => {
-    console.log("Cliquou no Botão!")
+    //console.log("Cliquou no Botão!")
     
     const socket = io();
 
-    const chat_help = document.getElementById("chat+help");
+    const chat_help = document.getElementById("chat_help");
     chat_help.style.display = "none";
 
     const chat_in_support = document.getElementById("chat_in_support");
