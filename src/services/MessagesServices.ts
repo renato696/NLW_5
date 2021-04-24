@@ -29,6 +29,8 @@ class MessagesServices {
         const list = await messagesRepository.find({
             user_id
         });
+
+        return list;
     }
 }
 
