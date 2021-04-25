@@ -49,7 +49,10 @@ io.on("connect", (socket) => {
             text,
             user_id
         })
-
         //salvar a conexao com o socket_id, user_id,
+    
+        const allMessages = await messagesService.listByUser(user_id);
+
+        socket.emit("client_list_all_messages", allMessages);
     });
 });
