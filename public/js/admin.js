@@ -79,7 +79,7 @@ function sendMessage(id) {
   const createDiv = document.createElement("div");
 
   createDiv.className = "admin_message_admin";
-  createDiv.innerHTML = `Atendente: <spam>${params.text}</spam>`;
+  createDiv.innerHTML = `Atendente: <span>${params.text}</span>`;
   createDiv.innerHTML += `<spam class="admin_date">${dayjs().format("DD/MM/YYYY HH:mm:ss")}`;
 
   divMessages.appendChild(createDiv);
@@ -92,13 +92,13 @@ socket.on("admin_receive_message", (data) => {
   const divMessages = document.getElementById(`allMessages${connection.user_id}`);
 
   const createDiv = document.createElement("div");
-  
+
   createDiv.className = "admin_message_client";
 
-  createDiv.innerHTML = `<spam>${connection.user.email} </spam>`;
-  createDiv.innerHTML += `<spam>${params.message.text}</spam>`;
+  createDiv.innerHTML = `<span>${connection.user.email} </span>`;
+  createDiv.innerHTML += `<span>${params.message.text}</span>`;
 
-  createDiv.innerHTML += `<spam class="admin_date">${dayjs(params.message.created_at).format("DD/MM/YYYY HH:mm:ss")}</spam>`;
+  createDiv.innerHTML += `<span class="admin_date">${dayjs(params.message.created_at).format("DD/MM/YYYY HH:mm:ss")}</span>`;
 
   divMessages.appendChild(createDiv);
 });
