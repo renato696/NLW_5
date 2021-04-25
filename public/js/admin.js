@@ -46,7 +46,8 @@ function call(id) {
       if(message.admin_id === null) {
         createDiv.className = "admin_message_client";
 
-        createDiv.innerHTML = `<spam>${connection.user.email} - ${message.text}</spam>`;
+        createDiv.innerHTML = `<spam>${connection.user.email} </spam>`;
+        createDiv.innerHTML += `<spam>${message.text}</spam>`;
 
         createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}`
 
@@ -57,7 +58,7 @@ function call(id) {
 
         createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}`
       }
-      
+
       divMessages.appendChild(createDiv);
     })
   });
