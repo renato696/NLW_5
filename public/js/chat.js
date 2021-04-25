@@ -1,12 +1,11 @@
-const { render } = require("ejs");
-
 let socket_admin_id = null;
 let emailUser = null;
+let socket = null;
 
 document.querySelector("#start_chat").addEventListener("click", (event) => {
     //console.log("Cliquou no Botão!")
     
-    const socket = io();
+    socket = io();
 
     const chat_help = document.getElementById("chat_help");
     chat_help.style.display = "none";
@@ -75,7 +74,7 @@ document.querySelector("#send_message_button").addEventListener("click", (event)
     const params = {
         text,
         socket_admin_id
-    }
+    };
 
     socket.emit("client_send_to_admin", params);
 
