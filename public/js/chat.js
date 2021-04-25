@@ -38,7 +38,7 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
                     email
                 })
 
-                document.getElementById("messages"),innerHTML += rendered
+                document.getElementById("messages").innerHTML += rendered
             }
         });
     });
