@@ -1,4 +1,3 @@
-const { ConnectionNotFoundError } = require("typeorm");
 
 const socket = io();
 let connectionsUsers = [];
