@@ -36,9 +36,15 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
                 const rendered = Mustache.render(template_client, {
                     message: message.text,
                     email
-                })
+                });
 
-                document.getElementById("messages").innerHTML += rendered
+                document.getElementById("messages").innerHTML += rendered;
+            } else {
+                const rendered = Mustache.render(template_admin, {
+                    message_admin: message.text
+                });
+
+                document.getElementById("messages").innerHTML += rendered;
             }
         });
     });
