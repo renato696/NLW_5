@@ -49,7 +49,7 @@ function call(id) {
         createDiv.innerHTML = `<spam>${connection.user.email} </spam>`;
         createDiv.innerHTML += `<spam>${message.text}</spam>`;
 
-        createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}`
+        createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}</spam>`;
 
       }else {
         createDiv.className = "admin_message_admin";
