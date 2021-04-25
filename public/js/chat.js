@@ -23,7 +23,11 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
             }else {
                 console.log(call);
             }
-        })
-    })
+        });
+    });
+
+    socket.on("client_list_all_messages", (messages) => {
+        console.log("messages", messages)
+    });
 
 });
