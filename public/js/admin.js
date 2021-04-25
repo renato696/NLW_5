@@ -88,5 +88,15 @@ function sendMessage(id) {
 }
 
 socket.on("admin_receive_message", (data) => {
-  console.log(data);
-})
+  const connection = connectionsUsers.find(connection => connection.socket_id = data.socket_id);
+  const divMessages = document.getElementById(`allMessages${connection.user_id}`);
+
+  createDiv.className = "admin_message_client";
+
+  createDiv.innerHTML = `<spam>${connection.user.email} </spam>`;
+  createDiv.innerHTML += `<spam>${params.message.text}</spam>`;
+
+  createDiv.innerHTML += `<spam class="admin_date">${dayjs(params.message.created_at).format("DD/MM/YYYY HH:mm:ss")}</spam>`;
+
+  divMessages.appendChild(createDiv);
+});
