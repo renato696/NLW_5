@@ -5,7 +5,7 @@ import { MessagesServices } from "../services/MessagesServices";
 
 io.on("connect", async (socket) => {
     const connectionsService = new ConnectionsService();
-    const messagesService = new MessagesServices;
+    const messagesService = new MessagesServices();
 
     const allConnectionsWithoutAdmin = await connectionsService.findAllWithoutAdmin();
 
