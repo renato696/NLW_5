@@ -1,5 +1,7 @@
 #Anotações de aula
 
+para acessar as páginas da aplicação, rodar: localhost:3333/pages/admin e /pages/client
+
 ## Aula 01
 
 - Criar package.json, que é o arquivo de gerenciamento do projeto<br>
