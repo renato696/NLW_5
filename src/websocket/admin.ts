@@ -19,7 +19,7 @@ io.on("connect", async (socket) => {
         callback(allMessages);
     });
 
-    socket.on("admin_send_message", async params => {
+    socket.on("admin_send_message", async (params) => {
         const { user_id, text } = params;
 
         await messagesService.create({
@@ -36,7 +36,7 @@ io.on("connect", async (socket) => {
         });
     });
 
-    socket.on("admin_user_in_support", async params => {
+    socket.on("admin_user_in_support", async (params) => {
         const { user_id } = params;
         await connectionsService.updateAdminID(user_id, socket.id);  
 
