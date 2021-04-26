@@ -1,6 +1,6 @@
-
 const socket = io();
 let connectionsUsers = [];
+let connectionInSupport = []; //cria uma variavel para armazenar os atendimentos
 
 socket.on("admin_list_all_users", (connections) => {
   connectionsUsers = connections;
@@ -8,12 +8,12 @@ socket.on("admin_list_all_users", (connections) => {
 
   let template = document.getElementById("template").innerHTML;
 
-  connections.forEach(connection => {
+  connections.forEach((connection) => {
     
     const rendered = Mustache.render(template, {
       email: connection.user.email,
       id: connection.socket_id
-    })
+    });
 
     document.getElementById("list_users").innerHTML += rendered;
   });
@@ -21,14 +21,14 @@ socket.on("admin_list_all_users", (connections) => {
 
 function call(id) {
 
-  const connection = connectionsUsers.find(connection => connection.socket_id === id);
+  const connection = connectionsUsers.find((connection) => connection.socket_id === id);
 
   const template = document.getElementById("admin_template").innerHTML;
 
   const rendered = Mustache.render(template, {
     email: connection.user.email,
     id: connection.user_id
-  })
+  });
 
   document.getElementById("supports").innerHTML += rendered;
 
@@ -39,31 +39,31 @@ function call(id) {
   socket.emit("admin_user_in_support", params);
 
 
-  socket.emit("admin_list_messages_by_user", params, messages => {
+  socket.emit("admin_list_messages_by_user", params, (messages) => {
     
     const divMessages = document.getElementById(`allMessages${connection.user_id}`);
 
-    messages.forEach(message => {
+    messages.forEach((message) => {
       const createDiv = document.createElement("div");
 
       if(message.admin_id === null) {
         createDiv.className = "admin_message_client";
 
-        createDiv.innerHTML = `<spam>${connection.user.email} </spam>`;
-        createDiv.innerHTML += `<spam>${message.text}</spam>`;
+        createDiv.innerHTML = `<span>${connection.user.email} </span>`;
+        createDiv.innerHTML += `<span>${message.text}</span>`;
 
-        createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}</spam>`;
+        createDiv.innerHTML += `<span class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}</span>`;
 
       }else {
         createDiv.className = "admin_message_admin";
 
-        createDiv.innerHTML = `Atendente: <spam>${message.text}</spam>`;
+        createDiv.innerHTML = `Atendente: <span>${message.text}</span>`;
 
-        createDiv.innerHTML += `<spam class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}`
+        createDiv.innerHTML += `<span class="admin_date">${dayjs(message.created_at).format("DD/MM/YYYY HH:mm:ss")}`;
       }
 
       divMessages.appendChild(createDiv);
-    })
+    });
   });
 }
 
@@ -83,7 +83,7 @@ function sendMessage(id) {
 
   createDiv.className = "admin_message_admin";
   createDiv.innerHTML = `Atendente: <span>${params.text}</span>`;
-  createDiv.innerHTML += `<spam class="admin_date">${dayjs().format("DD/MM/YYYY HH:mm:ss")}`;
+  createDiv.innerHTML += `<span class="admin_date">${dayjs().format("DD/MM/YYYY HH:mm:ss")}`;
 
   divMessages.appendChild(createDiv);
 
@@ -91,7 +91,7 @@ function sendMessage(id) {
 }
 
 socket.on("admin_receive_message", (data) => {
-  const connection = connectionsUsers.find(connection => connection.socket_id = data.socket_id);
+  const connection = connectionInSupport.find((connection) => connection.socket_id === data.socket_id); //aqui utiliza o array de atendimento que foi inserido acima
   const divMessages = document.getElementById(`allMessages${connection.user_id}`);
 
   const createDiv = document.createElement("div");
