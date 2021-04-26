@@ -23,7 +23,7 @@ function call(id) {
 
   const connection = connectionsUsers.find((connection) => connection.socket_id === id);
 
-  connectionInSupport.push(connection);
+  connectionInSupport.push(connection); //Quando encontrar a conexao, coloca dentro do array de atendimentos
 
   const template = document.getElementById("admin_template").innerHTML;
 
